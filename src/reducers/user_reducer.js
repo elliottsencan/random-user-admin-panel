@@ -1,4 +1,4 @@
-import {FETCH_USER_SUCCESS, FETCH_USER_FAIL} from '../actions/types';
+import {FETCH_USER_SUCCESS, FETCH_USER_FAIL} from '../constants/types';
 
 export default function(state = {}, action) {
   switch (action.type) {
