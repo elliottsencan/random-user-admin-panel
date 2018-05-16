@@ -1,0 +1,41 @@
+.list {
+	display:flex;
+	flex-direction:column;
+	flex: 1;
+	background-color: #2C3241;
+	padding: 1em 2em;
+	border-radius: 30px;
+}
+
+.list header{
+	flex: 0 1;
+	align-items: left;
+	text-align: left;
+	display: flex;
+	padding: 1.5em 0 3em;
+	margin: 0 1.5em;
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+.list header h4 {
+	margin: 0;
+	font-size: 24px;
+}
+
+.list table {
+	margin: 0 1em;
+	padding: 1.5em 0;
+}
+
+.list table td {
+	padding: .25em;
+}
+
+.list table td.button-data-cell {
+	text-align: right;
+	vertical-align: top;
+}
+
+.list table td.subtext-data-cell {
+	padding-bottom: 1.5em;
+}

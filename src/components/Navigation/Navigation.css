@@ -1,0 +1,36 @@
+/*should get sass wired up here */
+
+aside.navigation {
+  flex: 0 0 18em;
+}
+
+aside.navigation nav ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	opacity: 1;
+	padding: .25em 1.5em 0;
+}
+
+aside.navigation nav ul li{
+	flex: 1 1;
+	font-size: 20px;
+	padding: 1.25em 0;
+}
+
+aside.navigation nav ul li svg {
+	margin-right: 1em;
+	width: 2em;
+}
+
+aside.navigation nav ul li a {
+	text-decoration: none;
+	color: #535A6B;
+	transition: color 250ms;
+	padding: 1.25em 0;
+}
+
+aside.navigation a.active {
+	color: #fff;
+}
