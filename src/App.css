@@ -4,6 +4,7 @@ body, #root {
 	flex-direction: column;
 	background-color: #333949;
 	color: white;
+	font-family: 'Open Sans', sans-serif;
 }
 
 body > #root> div {
@@ -11,19 +12,11 @@ body > #root> div {
   flex: 1;
 }
 
-header {
-	flex: 0 0 100%;
-	padding-left: 15em;
-}
-
-aside {
-  flex: 0 0 15em;
-}
-
-main {
- flex: 1;
-}
-
 a {
 	color: white;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	font-weight: normal;
 }
