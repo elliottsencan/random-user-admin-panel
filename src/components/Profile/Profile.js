@@ -17,7 +17,7 @@ export const Profile = (props) => {
 		<section className="profile-card">
 	    <div className="cover" style={{backgroundImage: coverImgSrc}}></div>
 	    <div className="body">
-				<img className="profile-picture" src={profileImgSrc} />
+				<img className="profile-picture" src={profileImgSrc} alt=""/>
 				<form>
 					<div className='form-flex'>
 						<div className='form-column'>
@@ -70,12 +70,12 @@ const inputStyles = {
 	},
 };
 
-const buttonStyles = {
-	buttonStyle: {
-		borderRadius: '15px',
-		backgroundColor: 'pink',
-		overflow:'hidden',
-		color: 'white'
-	}
-
-};
+// const buttonStyles = {
+// 	buttonStyle: {
+// 		borderRadius: '15px',
+// 		backgroundColor: 'pink',
+// 		overflow:'hidden',
+// 		color: 'white'
+// 	}
+//
+// };
