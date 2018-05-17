@@ -17,3 +17,7 @@ section {
 section:first-child {
 	margin-bottom: 0;
 }
+
+section:last-child {
+	margin-bottom: 3em;
+}

@@ -19,9 +19,12 @@ aside.navigation nav ul li{
 	padding: 1.25em 0;
 }
 
-aside.navigation nav ul li svg {
+aside.navigation nav ul li .nav-icon {
 	margin-right: 1em;
 	width: 2em;
+  color: #535A6B!important;
+  top: 4px;
+  position: relative;
 }
 
 aside.navigation nav ul li a {
@@ -31,6 +34,7 @@ aside.navigation nav ul li a {
 	padding: 1.25em 0;
 }
 
-aside.navigation a.active {
-	color: #fff;
+aside.navigation a.active,
+aside.navigation a.active .nav-icon {
+	color: #fff!important;
 }
