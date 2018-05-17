@@ -3,7 +3,7 @@ import './Profile.css';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from '../Button/Button';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 
@@ -15,15 +15,12 @@ export default class Profile extends Component {
     };
   }
 
-  componentWillReceiveProps( nextProps ) {
-    if ( isEmpty( nextProps.userData ) ) {
-      return;
-    }
-    const cell = get( nextProps, 'userData.results.0.cell' );
-    const email = get( nextProps, 'userData.results.0.email' );
-    const city = get( nextProps, 'userData.results.0.location.city' );
-    const state = get( nextProps, 'userData.results.0.location.state' );
-    const password = get( nextProps, 'userData.results.0.login.password' );
+  componentWillMount() {
+    const cell = get( this.props, 'userData.results.0.cell' );
+    const email = get( this.props, 'userData.results.0.email' );
+    const city = get( this.props, 'userData.results.0.location.city' );
+    const state = get( this.props, 'userData.results.0.location.state' );
+    const password = get( this.props, 'userData.results.0.login.password' );
     this.setState( { cell, email, location: `${ city}, ${ state }`, password } )
   }
 
@@ -31,12 +28,12 @@ export default class Profile extends Component {
     const profileImgSrc = get( this.props, 'userData.results.0.picture.large', '' )
     const coverImgSrc = `url(${ profileImgSrc })`;
 
-    return ( <section className="profile-card">
+    return ( <section className="profile-card flex-animate">
       <div className="cover">
         <div className="content">
           <h2>My profile</h2>
           <p>Last Login: 24 Sep 2017, 13:56</p>
-          <p>Macbook pro, {this.state.location}</p>
+          <p className="capitalize">Macbook pro, {this.state.location}</p>
         </div>
         <img className="profile-picture" src={profileImgSrc} alt=""/>
         <div className="image" style={{
@@ -60,7 +57,7 @@ export default class Profile extends Component {
             </div>
           </div>
           <div className='form-footer'>
-            <RaisedButton type="submit" label="Save"/>
+            <Button display='primary' type="submit" text="Save"/>
           </div>
         </form>
       </div>

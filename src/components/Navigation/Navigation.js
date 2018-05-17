@@ -8,7 +8,7 @@ import CommunicationStayPrimaryPortrait from 'material-ui/svg-icons/communicatio
 import CommunicationComment from 'material-ui/svg-icons/communication/comment';
 import CommunicationCall from 'material-ui/svg-icons/communication/call';
 
-export const Navigation = () => ( <aside className='navigation'>
+const Navigation = () => ( <aside className='navigation'>
   <nav>
     <ul>
       <li>
@@ -32,3 +32,5 @@ export const Navigation = () => ( <aside className='navigation'>
     </ul>
   </nav>
 </aside> );
+
+export default Navigation;

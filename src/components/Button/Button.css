@@ -1,0 +1,43 @@
+.base-button {
+  borderRadius: 10px;
+  padding: .4em 2.25em;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  font-size: 1em;
+  line-height: 1.5;
+  border-radius: 3em;
+  transition: color .15s ease, background-color .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.base-button.primary {
+  background-image: linear-gradient(to right bottom, #f1ddbf, #ffc0a0, #ff9e9f, #ff7ebd, #dc73ef);
+}
+
+.base-button.danger {
+  background-image: linear-gradient(to right bottom, #f3dbc0, #f4c1a5, #f4a496, #f08795, #e16c9f);
+}
+
+.base-button.success {
+  background-image: linear-gradient(to right bottom, #f1e4b2, #e4e098, #d0de80, #b7dc6c, #95db5c);
+}
+
+.base-button.small {
+  font-size: 12px;
+  padding: .25em;
+}
+
+.base-button.medium {
+  font-size: 12px;
+  padding: .5em;
+  min-width: 65px;
+}
+
+.base-button.large {
+  font-size: 14px;
+  padding: .4em 2.25em;
+}

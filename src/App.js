@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { Main } from './components/Main/Main';
 import Header from './components/Header/Header';
-import { Navigation } from './components/Navigation/Navigation';
+import Navigation from './components/Navigation/Navigation';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import store from './store';
 import './App.css';
