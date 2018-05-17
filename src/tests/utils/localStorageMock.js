@@ -6,22 +6,22 @@ export const storageMock = () => {
     reset() {
       storage = {};
     },
-    setItem(key, value) {
-      storage[key] = value || '';
+    setItem( key, value ) {
+      storage[ key ] = value || '';
     },
-    getItem(key) {
+    getItem( key ) {
       return key in storage
-        ? storage[key]
-        : "null";
+        ? storage[ key ]
+        : null;
     },
-    removeItem(key) {
-      delete storage[key];
+    removeItem( key ) {
+      delete storage[ key ];
     },
-    key(i) {
-      return Object.values(storage)[i];
+    key( i ) {
+      return Object.values( storage )[ i ];
     },
     get length() {
-      return Object.keys(storage).length;
+      return Object.keys( storage ).length;
     }
   };
 }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Profile.css';
 import get from 'lodash/get';
-import isEmpty from 'lodash/isEmpty';
 import TextField from 'material-ui/TextField';
 import Button from '../Button/Button';
 import DropDownMenu from 'material-ui/DropDownMenu';
