@@ -1,3 +1,13 @@
+.dashboard {
+	display: flex;
+	flex: 1;
+}
+
+.dashboard > div {
+	display: flex;
+	flex: 1;
+}
+
 .vertical-column {
 	display: flex;
 	flex-direction: column;
