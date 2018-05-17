@@ -9,17 +9,34 @@ section.profile-card {
 }
 
 section.profile-card .cover {
-	background-size: cover;
-	background-position: center;
-	height: 400px;
+	height: 300px;
 	flex: 1;
 	border-radius: 30px 30px 0 0;
-	filter: blur(4px);
-	max-height: 300px;
 	position:relative;
 }
 
-section.profile-card .cover:after {
+section.profile-card .content {
+	z-index: 10;
+	display: block;
+	position: relative;
+	flex: 1;
+	padding: 2em;
+}
+
+section.profile-card .cover .image {
+	z-index:1;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-size: cover;
+	background-position: center;
+	height: 350px;
+	filter: blur(14px);
+}
+
+section.profile-card .cover .image:after {
   content: '';
 	position: absolute;
 	top: 0;
@@ -27,7 +44,7 @@ section.profile-card .cover:after {
 	bottom: 0;
 	left: 0;
 	background: linear-gradient(to bottom, #676C78 1%,#2C3241 50%, #2C3241 80%, #2C3241 100%);
-	opacity: .92;
+	opacity: .85;
 }
 
 section.profile-card .body {
@@ -38,9 +55,10 @@ section.profile-card .profile-picture {
 	border-radius: 50%;
 	box-shadow: 0px 0px 5px -2px black;
 	width: 150px;
-	top: calc(25% - 75px);
+	bottom: 0;
 	position: absolute;
 	left: calc(50% - 75px);
+	z-index: 10;
 }
 
 section.profile-card form .form-flex {
