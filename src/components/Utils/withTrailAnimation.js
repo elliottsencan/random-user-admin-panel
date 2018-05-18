@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Trail, animated } from 'react-spring'
+import { Trail, animated } from 'react-spring';
 
 const withTrailAnimation = ( Target ) => {
   return class extends Component {

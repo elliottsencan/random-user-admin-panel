@@ -28,7 +28,7 @@ class Dashboard extends Component {
       <List {...myBillsData}/>
     </div> ), ( <Profile userData={this.props.userData}/> ) ];
 
-    return ( <div className="dashboard">
+    return ( <div className="dashboard container">
       {this.props.renderTrailAnimation( items )}
     </div> );
   }

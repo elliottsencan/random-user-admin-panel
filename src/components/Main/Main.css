@@ -9,6 +9,11 @@ main {
 	padding-right: 3em;
 }
 
+.container, .container > div {
+	display: flex;
+	flex: 1;
+}
+
 section {
 	margin: 3em;
 	margin-right: 0;

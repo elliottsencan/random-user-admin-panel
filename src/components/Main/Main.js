@@ -3,9 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 import './Main.css';
 
 import Dashboard from '../../containers/Dashboard/Dashboard';
-import { Accounts } from '../../containers/Accounts/Accounts';
+import Accounts from '../../containers/Accounts/Accounts';
 import { Mobile } from '../../containers/Mobile/Mobile';
-import { Bills } from '../../containers/Bills/Bills';
+import Bills from '../../containers/Bills/Bills';
 import { Complaints } from '../../containers/Complaints/Complaints';
 import { CustomerCare } from '../../containers/CustomerCare/CustomerCare';
 
