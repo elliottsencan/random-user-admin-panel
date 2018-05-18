@@ -3,8 +3,7 @@ export const myAccountsData = {
   filterBy: [
     {
       text: 'None',
-      key: 'subtext',
-      value: null
+      key: 'subtext'
     }, {
       text: 'Available',
       key: 'subtext',
@@ -45,8 +44,7 @@ export const myBillsData = {
   filterBy: [
     {
       text: 'None',
-      key: 'subtext',
-      value: null
+      key: 'subtext'
     }, {
       text: 'Paid',
       key: 'buttonSubtext',
