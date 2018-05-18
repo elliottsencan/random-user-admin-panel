@@ -1,10 +1,12 @@
 {
   "name": "random-user-admin-panel",
+  "description": "A Dashboard that displays information about a random user, built with React and Redux",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "lodash": "^4.17.10",
     "material-ui": "^0.20.1",
+    "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
@@ -21,10 +23,16 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "doc": "react-doc-generator ./src -o DOCUMENTATION.md",
     "deploy": "npm run build && aws s3 sync build/ s3://random-user-admin-panel --delete"
   },
   "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "fetch-mock": "^6.4.2",
+    "jest": "^22.4.3",
+    "react-doc-generator": "^1.2.5",
     "redux-mock-store": "^1.5.1"
   }
 }

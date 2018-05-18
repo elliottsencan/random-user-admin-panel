@@ -4,7 +4,7 @@ import fetchMock from 'fetch-mock';
 import * as actions from '../../actions';
 import * as types from '../../constants/types';
 import { RANDOM_USER_API_BASE_URL } from '../../constants/urls';
-import { storageMock } from './utils/localStorageMock';
+import { storageMock } from '../utils/localStorageMock';
 
 const middlewares = [ thunk ];
 const mockStore = configureMockStore( middlewares );

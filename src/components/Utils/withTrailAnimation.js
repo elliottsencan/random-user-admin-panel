@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { Trail, animated } from 'react-spring';
 
+/**
+ * withTrailAnimation HOC
+ * adds method to render Trail Animations using react-spring to Target Component
+ * @param  {React} Target UI Component
+ * @return {React}        Wrapped Component
+ */
 const withTrailAnimation = ( Target ) => {
   return class extends Component {
 

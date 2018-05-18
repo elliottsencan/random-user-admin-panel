@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import './withLoader.css';
 
+/**
+ * withLoader HOC
+ * adds Loading Spinner render method to Target Component
+ * @param  {React} Target UI Component
+ * @return {React}        Wrapped Component
+ */
 const withLoader = ( Target ) => {
   return class extends Component {
 

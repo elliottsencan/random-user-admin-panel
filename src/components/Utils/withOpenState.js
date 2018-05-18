@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 
+/**
+ * withOpenState HOC
+ * adds UI state and management to Target Component
+ * @param  {React} Target UI Component
+ * @return {React}        Wrapped Component
+ */
 const withOpenState = ( Target ) => {
   return class extends Component {
     constructor( props ) {
