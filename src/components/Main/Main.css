@@ -1,5 +1,5 @@
 main {
-	background-color: #272D3C;
+	background-color: rgba(0,0,0,.2);
 	border-radius: 30px;
 	margin: 0 3em 3em 0;
 	flex-direction: row;

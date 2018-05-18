@@ -1,62 +1,69 @@
 .list {
-	display:flex;
-	flex-direction:column;
-	flex: 1;
-	background-color: #2C3241;
-	padding: 0 2em;
-	border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #2C3241;
+  padding: 0 2em;
+  border-radius: 30px;
 }
 
-.list header{
-	flex: 0 0 4em;
-	align-items: center;
-	text-align: left;
-	display: flex;
-	padding-top: .75em;
-	margin: 0 1.5em;
-	border-bottom: 1px solid rgba(255,255,255,0.4);
+.list header {
+  flex: 0 0 4em;
+  align-items: center;
+  text-align: left;
+  display: flex;
+  padding-top: .75em;
+  margin: 0 1.5em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .list header h4 {
-	margin: 0;
-	font-size: 20px;
-	flex: 4;
+  margin: 0;
+  font-size: 20px;
+  flex: 4;
 }
 
-.list header > div {
-	flex: 1;
+.list header>div {
+  flex: 1;
+  align-content: flex-end;
+  justify-content: right;
+  text-align: right;
+}
+
+.list header>div.filter-control {
+  flex: 0 0 130px;
 }
 
 .list table {
-	margin: 0 1em;
-	padding: 1.5em 0;
+  margin: 0 1em;
+  padding: 1.5em 0;
 }
 
-.list table tr{
-	color: #535A6B;
+.list table tr {
+  color: #535A6B;
 }
 
-.list table tr.active{
-	color: #ffffff;
+.list table tr.active {
+  color: #ffffff;
 }
 
 .list table td {
-	padding: 0.25em;
+  padding: 0.25em;
   font-size: 18px;
 }
 
 .list table td.button-data-cell {
-	text-align: right;
-	vertical-align: top;
+  text-align: right;
+  vertical-align: top;
 }
 
 .list table td.subtext-data-cell {
-	padding-bottom: 1.5em;
-	padding-top: 0;
-	font-size: 14px;
+  padding-bottom: 1.5em;
+  padding-top: 0;
+  font-size: 14px;
 }
 
 .list table td .button-subtext-cell {
-	font-size: 12px;
-	padding-top:2px;
+  font-size: 12px;
+  padding-top: 2px;
 }

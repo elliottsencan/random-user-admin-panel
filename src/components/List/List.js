@@ -3,9 +3,26 @@ import Button from '../Button/Button';
 import Search from '../Search/Search';
 import Popover from '../Popover/Popover';
 import './List.css';
+import isNull from 'lodash/isNull';
 
-//render prop candidate
 export default class List extends Component {
+
+  constructor( props ) {
+    super( props );
+
+    this.state = {
+      data: this.props.data
+    };
+  }
+
+  filterBy = ( item ) => {
+    if ( isNull( item.value ) ) {
+      return this.setState( { data: this.props.data } )
+    }
+    const data = this.props.data.filter( data => data[ item.key ].replace( / /g, "" ).toLowerCase() === item.value.replace( / /g, "" ).toLowerCase() );
+    this.setState( { data } );
+  }
+
   render() {
     return ( <section className="list">
       <header>
@@ -14,21 +31,13 @@ export default class List extends Component {
           <Search/>
         </div>
         <div className="filter-control">
-          <Popover
-            items={[
-              {
-                text: 'Number'
-              }, {
-                text: 'State'
-              }
-            ]}
-            label="Filter By"/></div>
+          <Popover items={this.props.filterBy} onChangeHandler={this.filterBy.bind( this )} label="Filter By"/></div>
       </header>
       <table>
         <tbody>
           {
-            this.props.data.map( item => {
-              return ( <Fragment>
+            this.state.data.map( item => {
+              return ( <Fragment key={item.text}>
                 <tr className={item.active
                     ? 'active'
                     : ''}>

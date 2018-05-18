@@ -23,6 +23,10 @@ export default class Profile extends Component {
     this.setState( { cell, email, location: `${ city}, ${ state }`, password } )
   }
 
+  onSubmitHandler( evt ) {
+    evt.preventDefault();
+  }
+
   render() {
     const profileImgSrc = get( this.props, 'userData.results.0.picture.large', '' )
     const coverImgSrc = `url(${ profileImgSrc })`;
@@ -40,7 +44,7 @@ export default class Profile extends Component {
           }}></div>
       </div>
       <div className="body">
-        <form>
+        <form onSubmit={this.onSubmitHandler}>
           <div className='form-flex'>
             <div className='form-column'>
               <TextField className='form-field' hintText="Email" {...inputStyles} value={this.state.email}/>
@@ -73,8 +77,27 @@ const inputStyles = {
 };
 
 const selectStyle = {
-  autoWidth: false,
+  autoWidth: true,
   style: {
     width: '100%'
+  },
+  menuStyle: {
+    background: '#2A2E3A'
+  },
+  menuItemStyle: {
+    color: 'white'
+  },
+  underlineStyle: {
+    bottom: '-10px',
+    borderColor: 'green',
+    margin: 0
+  },
+  labelStyle: {
+    paddingLeft: '0',
+    paddingRight: '0',
+    color: 'white'
+  },
+  iconStyle: {
+    right: 0
   }
-}
+};

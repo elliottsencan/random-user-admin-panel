@@ -1,5 +1,20 @@
 export const myAccountsData = {
   title: 'My accounts',
+  filterBy: [
+    {
+      text: 'None',
+      key: 'subtext',
+      value: null
+    }, {
+      text: 'Available',
+      key: 'subtext',
+      value: 'available'
+    }, {
+      text: 'Not Available',
+      key: 'subtext',
+      value: 'notavailable'
+    }
+  ],
   data: [
     {
       text: '+1-386-575-1232',
@@ -27,6 +42,21 @@ export const myAccountsData = {
 
 export const myBillsData = {
   title: 'My bills',
+  filterBy: [
+    {
+      text: 'None',
+      key: 'subtext',
+      value: null
+    }, {
+      text: 'Paid',
+      key: 'buttonSubtext',
+      value: 'billpaid'
+    }, {
+      text: 'Not Paid',
+      key: 'buttonSubtext',
+      value: 'billnotpaid'
+    }
+  ],
   data: [
     {
       text: '+1-386-575-1232',
@@ -37,7 +67,7 @@ export const myBillsData = {
         text: '$192',
         size: 'medium'
       },
-      buttonSubtext: 'Bill Paid    ',
+      buttonSubtext: 'Bill Paid',
       active: true
     }, {
       text: '+1-549-746-1365',

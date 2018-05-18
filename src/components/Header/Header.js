@@ -4,6 +4,7 @@ import get from 'lodash/get';
 
 import Avatar from 'material-ui/Avatar';
 import Popover from '../Popover/Popover';
+import Logo from '../Logo/Logo';
 import './Header.css';
 
 const Header = ( props ) => {
@@ -11,6 +12,7 @@ const Header = ( props ) => {
   const profileImageSrc = get( props, 'userData.results.0.picture.medium', '' )
 
   return ( <header id='header'>
+    <Logo/>
     <div className='title'>
       <h1>My dashboard</h1>
       <h2>Welcome to Otis payment portal</h2>

@@ -3,28 +3,38 @@ import { TextField, IconButton } from 'material-ui'
 import ActionSearchIcon from 'material-ui/svg-icons/action/search';
 import withExandingAnimation from '../Utils/withExandingAnimation';
 
+const baseStyles = {
+  open: {
+    width: 150
+  },
+  closed: {
+    width: 0
+  },
+  smallIcon: {
+    width: 30,
+    height: 30
+  },
+  icon: {
+    width: 25,
+    height: 25,
+    padding: 5,
+    top: 10,
+    color: 'white'
+  },
+  frame: {
+    display: 'flex',
+    marginLeft: 'auto'
+  },
+  input: {
+    color: 'white'
+  },
+  hint: {
+    color: 'rgba(255,255,255,.4)'
+  }
+};
+
 const SearchBox = ( props ) => {
-  const baseStyles = {
-    open: {
-      width: 200,
-      color: 'white'
-    },
-    closed: {
-      width: 0
-    },
-    smallIcon: {
-      width: 30,
-      height: 30
-    },
-    icon: {
-      width: 25,
-      height: 25,
-      padding: 5,
-      top: 0,
-      color: 'white'
-    },
-    frame: {}
-  };
+
   const textStyle = props.isOpen
     ? baseStyles.open
     : baseStyles.closed;
@@ -40,9 +50,7 @@ const SearchBox = ( props ) => {
       }} onClick={() => props.onClick()}>
       <ActionSearchIcon/>
     </IconButton>
-    {
-  props.isOpen && <TextField name='search' style={textStyle}/>
-}
+    <TextField name='search' style={textStyle} inputStyle={baseStyles.input}/>
   </div> );
 };
 

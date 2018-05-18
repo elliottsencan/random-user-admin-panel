@@ -1,0 +1,22 @@
+.background {
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 25vh);
+  width: 25vw;
+  height: 50vh;
+  border: 1px solid red;
+  z-index: 0;
+}
+
+.background .box {
+  background: red;
+  border-radius: 5px;
+}
+
+.background .box:nth-child(1) {}
+
+.background .box:nth-child(1) {}
+
+.background .box:nth-child(1) {}
+
+.background .box:nth-child(1) {}

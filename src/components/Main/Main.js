@@ -11,11 +11,11 @@ import { CustomerCare } from '../../containers/CustomerCare/CustomerCare';
 
 export const Main = () => ( <main>
   <Switch>
-    <Route exact="exact" path="/" component={Dashboard}/>
-    <Route exact="exact" path="/accounts" component={Accounts}/>
-    <Route exact="exact" path="/mobile" component={Mobile}/>
-    <Route exact="exact" path="/bills" component={Bills}/>
-    <Route exact="exact" path="/complaints" component={Complaints}/>
-    <Route exact="exact" path="/customer-care" component={CustomerCare}/>
+    <Route exact={true} path="/" component={Dashboard}/>
+    <Route exact={true} path="/accounts" component={Accounts}/>
+    <Route exact={true} path="/mobile" component={Mobile}/>
+    <Route exact={true} path="/bills" component={Bills}/>
+    <Route exact={true} path="/complaints" component={Complaints}/>
+    <Route exact={true} path="/customer-care" component={CustomerCare}/>
   </Switch>
 </main> );
