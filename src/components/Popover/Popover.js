@@ -49,7 +49,7 @@ const popoverStyle = {
   style: {
     backgroundColor: '#2A2E3A'
   }
-}
+};
 const selectStyle = {
   style: {
     background: '#2A2E3A'
