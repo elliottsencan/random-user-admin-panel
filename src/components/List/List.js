@@ -5,6 +5,7 @@ import Popover from '../Popover/Popover';
 import './List.css';
 import isNull from 'lodash/isNull';
 
+import CommunicationClearAll from 'material-ui/svg-icons/communication/clear-all';
 export default class List extends Component {
 
   constructor( props ) {
@@ -28,10 +29,28 @@ export default class List extends Component {
       <header>
         <h4>{this.props.title}</h4>
         <div className="search-bar">
-          <Search/>
+          <Search iconStyle={{
+              color: '#8D93A4'
+            }}/>
         </div>
         <div className="filter-control">
-          <Popover items={this.props.filterBy} onChangeHandler={this.filterBy.bind( this )} label="Filter By"/></div>
+          <Popover
+            buttonProps={{
+              labelPosition: "after",
+              icon: ( <CommunicationClearAll color="#8D93A4"/> ),
+              backgroundColor: '#3A4051',
+              labelStyle: {
+                color: '#8D93A4',
+                textTransform: 'capitalize'
+              },
+              style: {
+                borderRadius: '20px'
+              }
+            }}
+            buttonStyles={{}}
+            items={this.props.filterBy}
+            onChangeHandler={this.filterBy.bind( this )}
+            label="Filter By"/></div>
       </header>
       <table>
         <tbody>
@@ -41,7 +60,7 @@ export default class List extends Component {
                 <tr className={item.active
                     ? 'active'
                     : ''}>
-                  <td>{item.text}</td>
+                  <td>{item.decorator && <div className={`decorator ${ item.decorator }`}/>}{item.text}</td>
                   <td rowSpan="2" className="button-data-cell">
                     <Button {...item.button}/> {item.buttonSubtext && <div className="button-subtext-cell">{item.buttonSubtext}</div>}
                   </td>

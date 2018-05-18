@@ -45,9 +45,15 @@ const SearchBox = ( props ) => {
   };
   divStyle.width += baseStyles.icon.width + 5;
   return ( <div style={divStyle}>
-    <IconButton iconStyle={baseStyles.icon} style={{
+    <IconButton
+      iconStyle={{
+        ...baseStyles.icon,
+        ...props.iconStyle
+      }}
+      style={{
         padding: '0'
-      }} onClick={() => props.onClick()}>
+      }}
+      onClick={() => props.onClick()}>
       <ActionSearchIcon/>
     </IconButton>
     <TextField name='search' style={textStyle} inputStyle={baseStyles.input}/>

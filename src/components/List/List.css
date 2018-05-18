@@ -14,7 +14,7 @@
   display: flex;
   padding-top: .75em;
   margin: 0 1.5em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid #363C4D;
 }
 
 .list header h4 {
@@ -50,6 +50,24 @@
 .list table td {
   padding: 0.25em;
   font-size: 18px;
+  position:relative;
+}
+
+.list table td .decorator {
+  position: absolute;
+  left: -20px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  top: 25px;
+}
+
+.list table td .decorator.success {
+  background-color: #AAEC6E;
+}
+
+.list table td .decorator.danger {
+  background-color: #D16A94;
 }
 
 .list table td.button-data-cell {

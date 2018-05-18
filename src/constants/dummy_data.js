@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const myAccountsData = {
   title: 'My accounts',
   filterBy: [
@@ -61,6 +63,7 @@ export const myBillsData = {
     {
       text: '+1-386-575-1232',
       subtext: 'Patty Francisco',
+      decorator: 'success',
       button: {
         onClick: () => {},
         display: 'success',
@@ -72,6 +75,7 @@ export const myBillsData = {
     }, {
       text: '+1-549-746-1365',
       subtext: 'Jenee Withey',
+      decorator: 'danger',
       button: {
         onClick: () => {},
         display: 'danger',

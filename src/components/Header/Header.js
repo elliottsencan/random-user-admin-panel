@@ -6,6 +6,7 @@ import Avatar from 'material-ui/Avatar';
 import Popover from '../Popover/Popover';
 import Logo from '../Logo/Logo';
 import './Header.css';
+import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 
 const Header = ( props ) => {
   const first = get( props, 'userData.results["0"].name.first' );
@@ -22,6 +23,13 @@ const Header = ( props ) => {
         props.userData.results && <Fragment>
             <Avatar src={profileImageSrc}/>
             <Popover
+              buttonProps={{
+                icon: ( <HardwareKeyboardArrowDown color="white"/> ),
+                labelStyle: {
+                  color: 'white',
+                  textTransform: 'capitalize'
+                }
+              }}
               items={[
                 {
                   text: 'Settings'

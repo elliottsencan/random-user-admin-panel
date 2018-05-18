@@ -4,7 +4,6 @@ import { default as MaterialPopover } from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
-import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 
 class Popover extends Component {
 
@@ -12,16 +11,7 @@ class Popover extends Component {
 
   render() {
     return ( <Fragment>
-      <FlatButton
-        onClick={this.props.onClick}
-        labelPosition="before"
-        style={{
-          color: 'white',
-          textTransform: 'capitalize'
-        }}
-        label={this.props.label}
-        icon={<HardwareKeyboardArrowDown />
-}/>
+      <FlatButton onClick={this.props.onClick} labelPosition="before" label={this.props.label} {...this.props.buttonProps}/>
       <MaterialPopover
         open={this.props.isOpen}
         anchorEl={this.props.anchorEl}
