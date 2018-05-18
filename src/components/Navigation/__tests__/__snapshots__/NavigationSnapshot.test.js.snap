@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<aside
+  className="navigation"
+>
+  <nav>
+    <ul>
+      <li>
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          exact={true}
+          to="/"
+        >
+          <ActionTrendingUp
+            className="nav-icon"
+          />
+          My dashboard
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          to="/accounts"
+        >
+          <ActionPermIdentity
+            className="nav-icon"
+          />
+          Accounts
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          to="/bills"
+        >
+          <ActionAssessment
+            className="nav-icon"
+          />
+          Bills
+        </NavLink>
+      </li>
+    </ul>
+  </nav>
+</aside>
+`;

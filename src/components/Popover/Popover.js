@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from 'react';
+import PropTypes from 'prop-types';
 import withOpenState from '../Utils/withOpenState';
 import { default as MaterialPopover } from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
@@ -51,3 +52,11 @@ const selectStyle = {
     color: 'white'
   }
 };
+
+Popover.displayName = 'Popover Component';
+Popover.defaultProps = {
+  onChangeHandler: () => {}
+};
+Popover.propTypes = {
+  onChangeHandler: PropTypes.func
+}

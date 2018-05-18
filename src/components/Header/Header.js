@@ -8,6 +8,10 @@ import Logo from '../Logo/Logo';
 import './Header.css';
 import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 
+/**
+ * Connected component that renders Application Title and Dropdown Menu
+ * @param {[type]} props [description]
+ */
 const Header = ( props ) => {
   const first = get( props, 'userData.results["0"].name.first' );
   const profileImageSrc = get( props, 'userData.results.0.picture.medium', '' )
@@ -43,6 +47,8 @@ const Header = ( props ) => {
     </div>
   </header> );
 }
+
+Header.propTypes = {}
 
 function mapStateToProps( { user } ) {
   return { userData: user };

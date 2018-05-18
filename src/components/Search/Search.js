@@ -33,7 +33,10 @@ const baseStyles = {
   }
 };
 
-const SearchBox = ( props ) => {
+/**
+ * Collapsing Search Box UI Component
+ */
+const Search = ( props ) => {
 
   const textStyle = props.isOpen
     ? baseStyles.open
@@ -60,4 +63,6 @@ const SearchBox = ( props ) => {
   </div> );
 };
 
-export default withExandingAnimation( SearchBox );
+Search.displayName = 'Search';
+
+export default withExandingAnimation( Search );

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="list"
+>
+  <header>
+    <h4 />
+    <div
+      className="search-bar"
+    >
+      <Component
+        iconStyle={
+          Object {
+            "color": "#8D93A4",
+          }
+        }
+      />
+    </div>
+    <div
+      className="filter-control"
+    >
+      <Component
+        buttonProps={
+          Object {
+            "backgroundColor": "#3A4051",
+            "icon": <CommunicationClearAll
+              color="#8D93A4"
+          />,
+            "labelPosition": "after",
+            "labelStyle": Object {
+              "color": "#8D93A4",
+              "textTransform": "capitalize",
+            },
+            "style": Object {
+              "borderRadius": "20px",
+            },
+          }
+        }
+        items={Array []}
+        label="Filter By"
+        onChangeHandler={[Function]}
+      />
+    </div>
+  </header>
+  <table>
+    <tbody />
+  </table>
+</section>
+`;

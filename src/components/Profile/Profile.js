@@ -5,7 +5,12 @@ import TextField from 'material-ui/TextField';
 import Button from '../Button/Button';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
-
+/**
+ * UI Component
+ * Consists of Cover Photo and dummy form
+ * Accepts the raw userData model from Redux
+ * @type {Object}
+ */
 export default class Profile extends Component {
   constructor( props ) {
     super( props )
