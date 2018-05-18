@@ -1,12 +1,28 @@
 #header {
-	flex: 0 0 100%;
-	padding: .5em 0 1.5em 18.5em;
+  flex: 0 0 100%;
+  padding: .75em 0 1.25em;
+  display: flex;
 }
 
-#header h1{
-	margin-bottom: .5em;
+#header .logo {
+  flex: 0 0 18.5em;
 }
 
-#header h2{
-	font-size: 20px;
+#header h1 {
+  margin-bottom: .35em;
+}
+
+#header h2 {
+  font-size: 16px;
+}
+
+#header .title {
+  flex: 1;
+}
+
+#header .dropdown {
+  padding-right: 3em;
+  align-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }

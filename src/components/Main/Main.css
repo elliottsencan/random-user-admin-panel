@@ -1,5 +1,5 @@
 main {
-	background-color: #272D3C;
+	background-color: rgba(0,0,0,.2);
 	border-radius: 30px;
 	margin: 0 3em 3em 0;
 	flex-direction: row;
@@ -9,6 +9,11 @@ main {
 	padding-right: 3em;
 }
 
+.container, .container > div {
+	display: flex;
+	flex: 1;
+}
+
 section {
 	margin: 3em;
 	margin-right: 0;
@@ -16,4 +21,8 @@ section {
 
 section:first-child {
 	margin-bottom: 0;
+}
+
+section:last-child {
+	margin-bottom: 3em;
 }

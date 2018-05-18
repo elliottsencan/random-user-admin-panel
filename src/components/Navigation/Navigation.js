@@ -1,19 +1,29 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navigation.css';
-import * as MD from 'react-icons/lib/md';
+import ActionTrendingUp from 'material-ui/svg-icons/action/trending-up';
+import ActionPermIdentity from 'material-ui/svg-icons/action/perm-identity';
+import ActionAssessment from 'material-ui/svg-icons/action/assessment';
+// import CommunicationStayPrimaryPortrait from 'material-ui/svg-icons/communication/stay-primary-portrait'; import CommunicationComment
+// from 'material-ui/svg-icons/communication/comment'; import CommunicationCall from 'material-ui/svg-icons/communication/call';
 
-export const Navigation = () => (
-	<aside className='navigation'>
-		<nav>
-			<ul>
-				<li><NavLink to="/" exact={true}><MD.MdTrendingUp />My dashboard</NavLink></li>
-				<li><NavLink to="/accounts" ><MD.MdPermIdentity />Accounts</NavLink></li>
-				<li><NavLink to="/mobile" ><MD.MdStayPrimaryPortrait />Mobile</NavLink></li>
-				<li><NavLink to="/bills" ><MD.MdAssessment />Bills</NavLink></li>
-				<li><NavLink to="/complaints" ><MD.MdComment />Complaints</NavLink></li>
-				<li><NavLink to="/customer-care" ><MD.MdCall />Customer Care</NavLink></li>
-			</ul>
-		</nav>
-	</aside>
-);
+const Navigation = () => ( <aside className='navigation'>
+  <nav>
+    <ul>
+      <li>
+        <NavLink to="/" exact={true}><ActionTrendingUp className="nav-icon"/>My dashboard</NavLink>
+      </li>
+      <li>
+        <NavLink to="/accounts"><ActionPermIdentity className="nav-icon"/>Accounts</NavLink>
+      </li>
+      <li>
+        <NavLink to="/bills"><ActionAssessment className="nav-icon"/>Bills</NavLink>
+      </li>
+    </ul>
+  </nav>
+</aside> );
+
+export default Navigation;
+// <li>   <NavLink to="/mobile"><CommunicationStayPrimaryPortrait className="nav-icon"/>Mobile</NavLink> </li> <li>   <NavLink
+// to="/complaints"><CommunicationComment className="nav-icon"/>Complaints</NavLink> </li> <li>   <NavLink
+// to="/customer-care"><CommunicationCall className="nav-icon"/>Customer Care</NavLink> </li>

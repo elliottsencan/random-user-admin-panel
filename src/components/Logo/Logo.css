@@ -1,0 +1,39 @@
+div.logo {
+  flex: 0 0 18.5em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 1em;
+  padding: 0;
+}
+
+.logo .outer-circle {
+  background-image: linear-gradient(to right bottom, #F9E386, #ff7ebd, #dc73ef);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  z-index: 5;
+}
+
+.logo .inner-circle {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  background-color: #333949;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  z-index: 50;
+}
+
+.logo .floating-circle {
+  background-color: #F9E386;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  z-index: 5;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
