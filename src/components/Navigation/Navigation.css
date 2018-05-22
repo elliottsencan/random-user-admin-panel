@@ -1,46 +1,62 @@
-/*should get sass wired up here */
-
-aside.navigation {
-  flex: 0 0 18em;
+@media only screen and (max-width: 1223px) {
+  aside.navigation {
+    flex: 0 0 14em;
+  }
+  aside.navigation nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    opacity: 1;
+    padding: .25em 0 0;
+  }
+  aside.navigation nav ul li {
+    flex: 1 1;
+    font-size: 16px;
+  }
 }
 
-aside.navigation nav ul {
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	opacity: 1;
-	padding: .25em 0 0;
-}
+/* Desktops and laptops ----------- */
 
-aside.navigation nav ul li{
-	flex: 1 1;
-	font-size: 20px;
+@media only screen and (min-width: 1224px) {
+  aside.navigation {
+    flex: 0 0 18em;
+  }
+  aside.navigation nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    opacity: 1;
+    padding: .25em 0 0;
+  }
+  aside.navigation nav ul li {
+    flex: 1 1;
+    font-size: 20px;
+  }
 }
 
 aside.navigation nav ul li .nav-icon {
-	margin-right: 1em;
-	width: 2em;
-  color: #535A6B!important;
+  margin-right: 1em;
+  width: 2em;
+  color: #535A6B !important;
   top: 4px;
   position: relative;
 }
 
 aside.navigation nav ul li a {
-	text-decoration: none;
-	color: #535A6B;
-	transition: color 250ms;
-	padding: 1.25em;
-  display:inline-block;
+  text-decoration: none;
+  color: #535A6B;
+  transition: color 250ms;
+  padding: 1.25em;
+  display: inline-block;
   width: calc(100% - 2.5em);
 }
 
-aside.navigation a:hover,
-aside.navigation a:hover .nav-icon {
-	color: rgba(255,255,255,.4)!important;
+aside.navigation a:hover, aside.navigation a:hover .nav-icon {
+  color: rgba(255, 255, 255, .4) !important;
 }
 
-aside.navigation a.active,
-aside.navigation a.active .nav-icon {
-	color: #fff!important;
+aside.navigation a.active, aside.navigation a.active .nav-icon {
+  color: #fff !important;
 }

@@ -1,0 +1,4 @@
+.accounts, .accounts > div {
+	display: flex;
+	flex: 1;
+}

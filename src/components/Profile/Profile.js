@@ -153,7 +153,8 @@ const inputStyles = {
 const selectStyle = {
   autoWidth: true,
   style: {
-    width: '100%'
+    width: '100%',
+    maxWidth: '250px'
   },
   menuStyle: {
     background: '#2A2E3A'
