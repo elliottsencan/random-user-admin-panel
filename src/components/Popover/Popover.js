@@ -8,8 +8,6 @@ import FlatButton from 'material-ui/FlatButton';
 
 class Popover extends Component {
 
-  onClickHandler = ( item ) => this.props.onChangeHandler( item );
-
   render() {
     return ( <Fragment>
       <FlatButton onClick={this.props.onClick} labelPosition="before" label={this.props.label} {...this.props.buttonProps}/>
@@ -27,7 +25,11 @@ class Popover extends Component {
         }}
         onRequestClose={this.props.handleRequestClose}>
         <Menu {...selectStyle}>
-          {( this.props.items || [] ).map( item => ( <MenuItem key={item.text} primaryText={item.text} onClick={() => this.onClickHandler( item )}/> ) )}
+          {
+            ( this.props.items || [] ).map( item => ( <MenuItem key={item.text} primaryText={item.text} onClick={() => {
+                this.props.onChangeHandler( item )
+              }}/> ) )
+          }
         </Menu>
       </MaterialPopover>
     </Fragment> );
@@ -45,9 +47,6 @@ const selectStyle = {
   style: {
     background: '#2A2E3A'
   },
-  innerDivStyle: {
-    background: '#2A2E3A'
-  },
   menuItemStyle: {
     color: 'white'
   }
@@ -57,6 +56,7 @@ Popover.displayName = 'Popover Component';
 Popover.defaultProps = {
   onChangeHandler: () => {}
 };
+
 Popover.propTypes = {
   onChangeHandler: PropTypes.func
 }

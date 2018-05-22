@@ -8,6 +8,24 @@ section.profile-card {
 	position:relative;
 }
 
+section.profile-card .loading-container {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	bottom: 100%;
+	right: 0;
+	background-color: rgba(44, 50, 65, .8);
+	z-index: 1000;
+	opacity: 0;
+	transition: opacity 750ms;
+}
+
+section.profile-card.loading .loading-container {
+	bottom: 0;
+	left: 0;
+	opacity: 1;
+}
+
 section.profile-card .cover {
 	height: 325px;
 	flex: 1;
@@ -21,6 +39,11 @@ section.profile-card .content {
 	position: relative;
 	flex: 1;
 	padding: 2em;
+}
+
+section.profile-card.loading .cover,
+section.profile-card.loading .body {
+	filter: blur(15px);
 }
 
 section.profile-card .content h2 {

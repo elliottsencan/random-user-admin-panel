@@ -35,6 +35,11 @@ aside.navigation nav ul li a {
   width: calc(100% - 2.5em);
 }
 
+aside.navigation a:hover,
+aside.navigation a:hover .nav-icon {
+	color: rgba(255,255,255,.4)!important;
+}
+
 aside.navigation a.active,
 aside.navigation a.active .nav-icon {
 	color: #fff!important;
