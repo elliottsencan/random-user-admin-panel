@@ -17,8 +17,12 @@ export default class List extends Component {
     super( props );
 
     this.state = {
-      data: this.props.data
+      data: this.getDataSubset( this.props.data )
     };
+  }
+
+  getDataSubset( data ) {
+    return data.slice( 0, this.props.limit )
   }
 
   renderItem = ( item, index ) => {
@@ -41,10 +45,12 @@ export default class List extends Component {
 
   filterBy = ( item ) => {
     if ( isEmpty( item ) || isUndefined( item.value ) ) {
-      return this.setState( { data: this.props.data } )
+      return this.setState( {
+        data: this.getDataSubset( this.props.data )
+      } );
     }
     const data = this.props.data.filter( data => data[ item.key ].replace( / /g, "" ).toLowerCase() === item.value.replace( / /g, "" ).toLowerCase() );
-    this.setState( { data } );
+    this.setState( { data: this.getDataSubset( data ) } );
   }
 
   render() {
@@ -85,10 +91,12 @@ List.displayName = 'List'
 
 List.defaultProps = {
   data: [],
-  filterBy: []
+  filterBy: [],
+  limit: 100
 };
 
 List.propTypes = {
   data: PropTypes.array,
-  filterBy: PropTypes.array
+  filterBy: PropTypes.array,
+  limit: PropTypes.number
 }

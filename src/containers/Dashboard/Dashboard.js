@@ -14,7 +14,9 @@ import './Dashboard.css';
 class Dashboard extends Component {
 
   componentWillMount() {
-    this.props.fetchUser();
+    if ( isEmpty( this.props.userData ) ) {
+      this.props.fetchUser();
+    }
   }
 
   render() {
@@ -24,8 +26,8 @@ class Dashboard extends Component {
     }
 
     const items = [ ( <div className="vertical-column">
-      <List {...myAccountsData}/>
-      <List {...myBillsData}/>
+      <List {...myAccountsData} limit={2}/>
+      <List {...myBillsData} limit={2}/>
     </div> ), ( <Profile userData={this.props.userData}/> ) ];
 
     return ( <div className="dashboard container">

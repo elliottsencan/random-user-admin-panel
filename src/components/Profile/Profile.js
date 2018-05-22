@@ -1,31 +1,62 @@
 import React, { Component } from 'react';
 import './Profile.css';
 import get from 'lodash/get';
+import isEqual from 'lodash/isEqual';
 import TextField from 'material-ui/TextField';
 import Button from '../Button/Button';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
+import withLoader from '../Utils/withLoader/withLoader';
 /**
  * UI Component
  * Consists of Cover Photo and dummy form
  * Accepts the raw userData model from Redux
  * @type {Object}
  */
-export default class Profile extends Component {
+class Profile extends Component {
   constructor( props ) {
     super( props )
     this.state = {
-      sms: 2
+      cell: '',
+      email: '',
+      location: '',
+      password: '',
+      sms: 2,
+      imageLoading: false
     };
   }
 
+  handleImageLoaded = () => {
+    this.setState( { imageLoading: false } );
+  }
+
   componentWillMount() {
-    const cell = get( this.props, 'userData.results.0.cell' );
-    const email = get( this.props, 'userData.results.0.email' );
-    const city = get( this.props, 'userData.results.0.location.city' );
-    const state = get( this.props, 'userData.results.0.location.state' );
-    const password = get( this.props, 'userData.results.0.login.password' );
-    this.setState( { cell, email, location: `${ city}, ${ state }`, password } )
+    this.setProfileState( this.props );
+  }
+
+  componentWillReceiveProps( nextProps ) {
+    if ( !isEqual( nextProps.userData.results, this.props.userData.results ) ) {
+      this.setProfileState( nextProps, true );
+    }
+  }
+
+  setProfileState( props, imageLoading = false ) {
+    const cell = get( props, 'userData.results.0.cell', '' );
+    const email = get( props, 'userData.results.0.email', '' );
+    const city = get( props, 'userData.results.0.location.city', '' );
+    const state = get( props, 'userData.results.0.location.state', '' );
+    const password = get( props, 'userData.results.0.login.password', '' );
+    this.setState( { cell, email, location: `${ city}, ${ state }`, password, imageLoading } );
+  }
+
+  handleInputChange = ( event ) => {
+    const target = event.target;
+    const value = target.type === 'checkbox'
+      ? target.checked
+      : target.value;
+    const name = target.name;
+
+    this.setState( { [ name ]: value } );
   }
 
   onSubmitHandler( evt ) {
@@ -33,17 +64,24 @@ export default class Profile extends Component {
   }
 
   render() {
-    const profileImgSrc = get( this.props, 'userData.results.0.picture.large', '' )
+    const profileImgSrc = get( this.props, 'userData.results.0.picture.large', '' );
     const coverImgSrc = `url(${ profileImgSrc })`;
+    const isLoading = get( this.props, 'userData.loading', false ) || this.state.imageLoading;
+    const loadingClass = isLoading
+      ? 'loading'
+      : '';
 
-    return ( <section className="profile-card flex-animate">
+    return ( <section className={`profile-card flex-animate ${ loadingClass }`}>
+      <div className="loading-container">
+        {this.props.renderLoader()}
+      </div>
       <div className="cover">
         <div className="content">
           <h2>My profile</h2>
           <p>Last Login: 24 Sep 2017, 13:56</p>
           <p className="capitalize">Macbook pro, {this.state.location}</p>
         </div>
-        <img className="profile-picture" src={profileImgSrc} alt=""/>
+        <img className="profile-picture" src={profileImgSrc} alt="" onLoad={this.handleImageLoaded.bind( this )}/>
         <div className="image" style={{
             backgroundImage: coverImgSrc
           }}></div>
@@ -52,16 +90,44 @@ export default class Profile extends Component {
         <form onSubmit={this.onSubmitHandler}>
           <div className='form-flex'>
             <div className='form-column'>
-              <TextField className='form-field' hintText="Email" {...inputStyles} value={this.state.email}/>
-              <TextField className='form-field' hintText="Location" {...inputStyles} value={this.state.location}/>
-              <DropDownMenu {...selectStyle} value={this.state.sms} onChange={this.handleChange}>
-                <MenuItem value={1} primaryText="SMS alerts activated"/>
-                <MenuItem value={2} primaryText="SMS alerts deactivated"/>
+              <TextField
+                className='form-field'
+                hintText="Email"
+                name="email"
+                autoComplete='email'
+                {...inputStyles}
+                value={this.state.email}
+                onChange={this.handleInputChange}/>
+              <TextField
+                className='form-field'
+                hintText="Location"
+                name="location"
+                {...inputStyles}
+                value={this.state.location}
+                onChange={this.handleInputChange}/>
+              <DropDownMenu {...selectStyle} value={this.state.sms} onChange={this.handleInputChange}>
+                <MenuItem value={1} name="sms" primaryText="SMS alerts activated"/>
+                <MenuItem value={2} name="sms" primaryText="SMS alerts deactivated"/>
               </DropDownMenu>
             </div>
             <div className='form-column'>
-              <TextField className='form-field' hintText="Phone Number" {...inputStyles} value={this.state.cell}/>
-              <TextField className='form-field' hintText="Password" {...inputStyles} type="password" value={this.state.password}/>
+              <TextField
+                className='form-field'
+                hintText="Phone Number"
+                autoComplete='tel-national'
+                name="cell"
+                {...inputStyles}
+                value={this.state.cell}
+                onChange={this.handleInputChange}/>
+              <TextField
+                className='form-field'
+                hintText="Password"
+                name="password"
+                autoComplete="current-password"
+                {...inputStyles}
+                type="password"
+                value={this.state.password}
+                onChange={this.handleInputChange}/>
             </div>
           </div>
           <div className='form-footer'>
@@ -72,6 +138,9 @@ export default class Profile extends Component {
     </section> );
   }
 }
+
+export default withLoader( Profile );
+
 const inputStyles = {
   hintStyle: {
     color: '#fff'
